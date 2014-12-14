@@ -1,14 +1,37 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WeHaveTheMunchiesActivity">
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/cat"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/tumblrBlue">
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:src="@drawable/tumblr_logo" />
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="40dp"
+            android:textColor="@color/white"
+            android:text="viewer" />
+    </LinearLayout>
 
     <ListView
         android:id="@+id/items_lv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:divider="@null">
+
 
     </ListView>
 
-</RelativeLayout>
+</LinearLayout>

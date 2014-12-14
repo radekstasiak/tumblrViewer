@@ -2,11 +2,9 @@ package com.example.tumblrviewer;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Window;
 import android.widget.AbsListView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
@@ -20,6 +18,7 @@ public class WeHaveTheMunchiesActivity extends Activity {
 
     private AQuery mAQ;
     private TextView mResultTextView;
+    private TextView mTitleTextView;
     private ListView mListView;
     private MenuArrayAdapter mItemArrayAdapter;
     private int postOffset;
@@ -30,6 +29,10 @@ public class WeHaveTheMunchiesActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
+        mTitleTextView = (TextView) findViewById(R.id.title_tv);
+        //  Typefaces typefaces = new Typefaces();
+        // Typeface font=typefaces.get(this, "fonts/tumblr.ttf");
+        //mTitleTextView.setTypeface(font);
         setContentView(R.layout.activity_list_viewer);
         mListView = (ListView) findViewById(R.id.items_lv);
         mAQ = new AQuery(this);

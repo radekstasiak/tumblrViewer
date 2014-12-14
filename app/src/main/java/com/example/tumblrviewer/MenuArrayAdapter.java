@@ -1,21 +1,21 @@
 package com.example.tumblrviewer;
 
+import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.view.Display;
-import android.view.WindowManager;
-import android.widget.LinearLayout;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.androidquery.AQuery;
-
-import com.androidquery.util.Constants;
 import com.example.tumblrviewer.model.Item;
+import com.example.tumblrviewer.utils.ImageHelper;
 
 
 /**
@@ -51,6 +51,10 @@ public class MenuArrayAdapter extends ArrayAdapter<Item> {
         //clear();
         for (Item item : posts) {
 
+           /* if (posts[].photos[0].photoUrl.length  >= 3){
+                item.photos[0].photoUrl[0].uri = posts[getPosition(item)].photos[0].photoUrl[2].uri;
+            }*/
+
             add(item);
         }
 
@@ -71,6 +75,7 @@ public class MenuArrayAdapter extends ArrayAdapter<Item> {
         llLine.setOrientation(LinearLayout.HORIZONTAL);
         TextView header=new TextView(getContext());
         header.setText("Tags: ");
+        header.setTextColor(getContext().getResources().getColor(R.color.white));
         llLine.addView(header);
         header.measure(0,0);
 
@@ -78,10 +83,11 @@ public class MenuArrayAdapter extends ArrayAdapter<Item> {
         for (String tag: item.tags){
             TextView tagName=new TextView(getContext());
             tagName.setText(tag);
-            tagName.setPadding(0,0,10,0);
-            tagName.getEllipsize();
+            tagName.setTextColor(getContext().getResources().getColor(R.color.white));
+            tagName.setPadding(10, 0, 0, 0);
+            //tagName.getEllipsize();
             //tagName.setTag(tag);
-            tagName.setSingleLine();
+            //tagName.setSingleLine();
             tagName.measure(0,0);
             widthSoFar +=tagName.getMeasuredWidth();
             if(widthSoFar >= maxWidth){
@@ -109,7 +115,7 @@ public class MenuArrayAdapter extends ArrayAdapter<Item> {
     }
     @Override
     public View getView(int i, View convertView, ViewGroup viewGroup) {
-    ;
+
         ViewHolder viewHolder = null;
         if (convertView == null) {
 
@@ -138,9 +144,15 @@ public class MenuArrayAdapter extends ArrayAdapter<Item> {
         }
 
 
+        ImageHelper imHelper = new ImageHelper();
 
+//if(item.photos[0].photoUrl.length >= 3 ) {
+        // mAQ.id(viewHolder.mImageView).image(item.photos[0].photoUrl[2].uri, true, true, 600, 0, null, Constants.FADE_IN);
+        Bitmap image = mAQ.id(viewHolder.mImageView).getCachedImage(item.photos[0].photoUrl[0].uri);
 
-        mAQ.id(viewHolder.mImageView).image(item.photos[0].photoUrl.uri, true, true, 600, 0, null, Constants.FADE_IN);
+        mAQ.id(viewHolder.mImageView).image(imHelper.getRoundedCornerBitmap(image, 20));
+        //Picasso.with(getContext).load(item.photos[0].photoUrl.uri).
+//}
         return convertView;
 
 
