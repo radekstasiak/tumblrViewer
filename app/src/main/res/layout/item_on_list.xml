@@ -3,27 +3,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/tumblrBlue">
 
-        <ImageView
+    <ImageView
         android:id="@+id/tumblr_photo_iv"
-            android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal" />
-    </LinearLayout>
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerCrop"
+        android:src="@drawable/image" />
 
 
     <LinearLayout
         android:id="@+id/tags_layout"
+        android:layout_marginTop="5dp"
+        android:paddingBottom="3dp"
+
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/tumblrBlue"
+        android:background="@drawable/background"
         >
 
 

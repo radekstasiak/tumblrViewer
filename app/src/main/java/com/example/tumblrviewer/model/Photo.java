@@ -9,6 +9,6 @@ import java.io.Serializable;
  */
 public class Photo implements Serializable {
 
-    @SerializedName("original_size")
-    public PhotoUrl photoUrl;
+    @SerializedName("alt_sizes")
+    public PhotoUrl[] photoUrl;
 }

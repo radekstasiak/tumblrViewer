@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="turquise">#57BBC0</color>
+    <color name="turquise">#00CCDA</color>
     <color name="tumblrBlue">#34506B</color>
     <color name="white">#FFFFFF</color>
+    <color name="light_brown">#372322</color>
+    <color name="brown">#221515</color>
+    <color name="dark_slate_gray">#2F4F4F</color>
+    <color name="gray_2">#AFAFAF</color>
+    <color name="gray_1">#C0C0C0</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
 </resources>

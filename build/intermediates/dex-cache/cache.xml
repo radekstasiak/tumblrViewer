@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/Users/Radek/AndroidstudioProjects/tumblrViewer/app/build/intermediates/pre-dexed/debug/gson-2.2.2-5016b7cfdad081fdb47220fab2083d41ee0f9efa.jar"
+        jar="/Users/Radek/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.2/1f96456ca233dec780aa224bff076d8e8bca3908/gson-2.2.2.jar"
+        jumboMode="false" revision="20.0.0" sha1="1f96456ca233dec780aa224bff076d8e8bca3908" />
+    <item
+        dex="/Users/Radek/AndroidstudioProjects/tumblrViewer/app/build/intermediates/pre-dexed/debug/android-query-full.0.26.8-7173a56471a89f247c2d2b35f41c67c517f844c5.jar"
+        jar="/Users/Radek/AndroidstudioProjects/tumblrViewer/app/libs/android-query-full.0.26.8.jar"
+        jumboMode="false" revision="20.0.0" sha1="5ab405d9f4eaf5ddd615967cd35650657b758d40" />
+    <item
+        dex="/Users/Radek/AndroidstudioProjects/tumblrViewer/app/build/intermediates/pre-dexed/debug/picasso-2.4.0-32ea5c31bd90d26bb86dfecad6fbf51ecb2eb022.jar"
+        jar="/Users/Radek/AndroidstudioProjects/tumblrViewer/app/libs/picasso-2.4.0.jar"
+        jumboMode="false" revision="20.0.0" sha1="f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2" />
+
+</pre-dex-items>

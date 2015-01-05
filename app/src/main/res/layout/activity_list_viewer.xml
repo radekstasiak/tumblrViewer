@@ -1,37 +1,41 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/light_brown">
 
     <LinearLayout
         android:id="@+id/cat"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/tumblrBlue">
+        android:layout_height="60dp"
 
-        <ImageButton
-            android:layout_width="48dp"
-            android:layout_height="match_parent"
-            android:background="@null"
-            android:src="@drawable/tumblr_logo" />
+        android:background="@color/light_brown">
+
 
         <TextView
+
             android:id="@+id/title_tv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/background"
             android:textSize="40dp"
-            android:textColor="@color/white"
-            android:text="viewer" />
+            android:textColor="@color/turquise"
+            android:text="@string/title" />
     </LinearLayout>
 
-    <ListView
+    <com.example.tumblrviewer.utils.LoadMoreListView
         android:id="@+id/items_lv"
         android:layout_width="match_parent"
+        android:background="@null"
         android:layout_height="match_parent"
-        android:divider="@null">
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
 
-
-    </ListView>
+        android:paddingTop="20dp"
+        android:clipToPadding="false"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@color/transparent"
+        android:dividerHeight="10.0dp" />
 
 </LinearLayout>

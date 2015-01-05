@@ -1,7 +1,6 @@
 package com.example.tumblrviewer;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -16,6 +15,7 @@ import android.widget.TextView;
 import com.androidquery.AQuery;
 import com.example.tumblrviewer.model.Item;
 import com.example.tumblrviewer.utils.ImageHelper;
+import com.squareup.picasso.Picasso;
 
 
 /**
@@ -74,8 +74,9 @@ public class MenuArrayAdapter extends ArrayAdapter<Item> {
         llLine.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         llLine.setOrientation(LinearLayout.HORIZONTAL);
         TextView header=new TextView(getContext());
+        header.setPadding(5, 3, 0, 3);
         header.setText("Tags: ");
-        header.setTextColor(getContext().getResources().getColor(R.color.white));
+        header.setTextColor(getContext().getResources().getColor(R.color.turquise));
         llLine.addView(header);
         header.measure(0,0);
 
@@ -84,7 +85,7 @@ public class MenuArrayAdapter extends ArrayAdapter<Item> {
             TextView tagName=new TextView(getContext());
             tagName.setText(tag);
             tagName.setTextColor(getContext().getResources().getColor(R.color.white));
-            tagName.setPadding(10, 0, 0, 0);
+            tagName.setPadding(10, 3, 0, 0);
             //tagName.getEllipsize();
             //tagName.setTag(tag);
             //tagName.setSingleLine();
@@ -144,13 +145,25 @@ public class MenuArrayAdapter extends ArrayAdapter<Item> {
         }
 
 
-        ImageHelper imHelper = new ImageHelper();
+        ImageHelper imgHelper = new ImageHelper();
 
-//if(item.photos[0].photoUrl.length >= 3 ) {
-        // mAQ.id(viewHolder.mImageView).image(item.photos[0].photoUrl[2].uri, true, true, 600, 0, null, Constants.FADE_IN);
-        Bitmap image = mAQ.id(viewHolder.mImageView).getCachedImage(item.photos[0].photoUrl[0].uri);
+        if (item.photos[0].photoUrl.length >= 2) {
 
-        mAQ.id(viewHolder.mImageView).image(imHelper.getRoundedCornerBitmap(image, 20));
+            Picasso.with(getContext()).load(item.photos[0].photoUrl[1].uri).into(viewHolder.mImageView);
+
+            //Bitmap image = mAQ.id(viewHolder.mImageView).getCachedImage(item.photos[0].photoUrl[1].uri);
+            //mAQ.id(viewHolder.mImageView).image(imgHelper.getRoundedCornerBitmap(image, 20));
+
+        } else {
+            Picasso.with(getContext()).load(item.photos[0].photoUrl[0].uri).into(viewHolder.mImageView);
+            //Bitmap image = mAQ.id(viewHolder.mImageView).getCachedImage(item.photos[0].photoUrl[0].uri);
+            //mAQ.id(viewHolder.mImageView).image(imgHelper.getRoundedCornerBitmap(image, 20));
+
+
+        }
+
+
+        //mAQ.id(viewHolder.mImageView).image(imHelper.getRoundedCornerBitmap(image, 20));
         //Picasso.with(getContext).load(item.photos[0].photoUrl.uri).
 //}
         return convertView;

@@ -5,5 +5,7 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_list_viewer">ListViewer</string>
+    <string name="tag_label">TAGS</string>
+    <string name="title">MUNCHIES</string>
 
 </resources>
