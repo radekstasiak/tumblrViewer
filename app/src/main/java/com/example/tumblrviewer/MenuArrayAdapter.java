@@ -66,26 +66,29 @@ public class MenuArrayAdapter extends ArrayAdapter<Item> {
         System.out.println("");
     }
 
-    public void populateTags(LinearLayout ll, Item item){
+    public void populateTags(LinearLayout ll, TextView likeTb, Item item) {
 
         int maxWidth = mDisplaySize.x - 30;
         ll.removeAllViews();
         LinearLayout llLine=new LinearLayout(getContext());
         llLine.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         llLine.setOrientation(LinearLayout.HORIZONTAL);
-        TextView header=new TextView(getContext());
-        header.setPadding(5, 3, 0, 3);
-        header.setText("Tags: ");
-        header.setTextColor(getContext().getResources().getColor(R.color.turquise));
-        llLine.addView(header);
-        header.measure(0,0);
+        //TextView header= (TextView)
+        // header.setPadding(5, 3, 0, 3);
+        // header.setText("Tags: ");
+        // header.setTextColor(getContext().getResources().getColor(R.color.turquise));
+        // llLine.addView(header);
+        // header.measure(0,0);
 
-        int widthSoFar=header.getMeasuredWidth()+20;
+        likeTb.measure(0, 0);
+        //int widthSoFar=header.getMeasuredWidth()+20;
+        int widthSoFar = likeTb.getMeasuredWidth() + 20;
         for (String tag: item.tags){
             TextView tagName=new TextView(getContext());
             tagName.setText(tag);
             tagName.setTextColor(getContext().getResources().getColor(R.color.white));
-            tagName.setPadding(10, 3, 0, 0);
+            tagName.setPadding(10, 0, 0, 0);
+
             //tagName.getEllipsize();
             //tagName.setTag(tag);
             //tagName.setSingleLine();
@@ -123,7 +126,8 @@ public class MenuArrayAdapter extends ArrayAdapter<Item> {
             viewHolder = new ViewHolder();
             convertView = mInflater.inflate(mResourceId, viewGroup, false);
             viewHolder.mImageView = (ImageView) convertView.findViewById(R.id.tumblr_photo_iv);
-            viewHolder.mTagsLayout=(LinearLayout) convertView.findViewById(R.id.tags_layout);
+            viewHolder.mTagsLayout = (LinearLayout) convertView.findViewById(R.id.tags_layout_ll);
+            viewHolder.mLikeButton = (TextView) convertView.findViewById(R.id.like_tb);
             convertView.setTag(viewHolder);
         } else {
 
@@ -141,7 +145,7 @@ public class MenuArrayAdapter extends ArrayAdapter<Item> {
                viewHolder.mTagsLayout.addView(tagName);
            }
 */
-            populateTags(viewHolder.mTagsLayout, item);
+            populateTags(viewHolder.mTagsLayout, viewHolder.mLikeButton, item);
         }
 
 
@@ -175,6 +179,7 @@ public class MenuArrayAdapter extends ArrayAdapter<Item> {
     private class ViewHolder {
         ImageView mImageView;
         LinearLayout mTagsLayout;
+        TextView mLikeButton;
 
     }
 }
