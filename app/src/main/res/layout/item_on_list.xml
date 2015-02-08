@@ -16,17 +16,32 @@
 
 
     <LinearLayout
-        android:id="@+id/tags_layout"
+        android:id="@+id/tags_ll"
         android:layout_marginTop="5dp"
         android:paddingBottom="3dp"
-
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background"
         >
 
+        <TextView
+            android:id="@+id/like_tb"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/turquise"
+            android:text="@string/tag_label" />
 
+        <LinearLayout
+            android:id="@+id/tags_layout_ll"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="center_horizontal|center_vertical"
+            android:paddingBottom="3dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
 
     </LinearLayout>

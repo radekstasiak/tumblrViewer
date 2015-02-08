@@ -9,20 +9,22 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class LoginActivity extends Activity {
+    EditText mUsername;
+    EditText mPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        mUsername = (EditText) findViewById(R.id.username_et);
+        mPassword = (EditText) findViewById(R.id.password_et);
 
     }
 
     public void sendMessage(View view) {
 
         Intent intent = new Intent(this, WeHaveTheMunchiesActivity.class);
-        EditText mUsername = (EditText) findViewById(R.id.username_et);
-        EditText mPassword = (EditText) findViewById(R.id.password_et);
+
 
         if (verifyCredentials(mUsername.getText().toString(), mPassword.getText().toString())) {
             startActivity(intent);
