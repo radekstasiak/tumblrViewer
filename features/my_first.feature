@@ -6,7 +6,7 @@ Feature: Login feature
   	Then take picture
   	Then I enter "password" into input field number 2
   	Then take picture
-  	Then I press the "LOGIN" button
+  	Then I press the "WANT COOKIES" button
   	Then I should see text containing "MUNCHIES"
   	Then I wait
   	Then take picture
